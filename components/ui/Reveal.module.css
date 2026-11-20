@@ -1,0 +1,9 @@
+.r { transition: opacity .8s cubic-bezier(.2,.7,.2,1) var(--d), transform .8s cubic-bezier(.2,.7,.2,1) var(--d), clip-path .9s cubic-bezier(.2,.7,.2,1) var(--d); }
+.r[data-armed]:not([data-in]) { opacity: 0; }
+.up[data-armed]:not([data-in]) { transform: translateY(32px); }
+.left[data-armed]:not([data-in]) { transform: translateX(-40px); }
+.clip[data-armed]:not([data-in]) { clip-path: inset(0 100% 0 0); opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .r { transition: none; }
+  .r[data-armed]:not([data-in]) { opacity: 1; transform: none; clip-path: none; }
+}

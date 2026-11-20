@@ -1,0 +1,6 @@
+.stub { min-height: 70svh; padding: calc(var(--header-h) + 48px) 40px 48px; border-top: 1px solid var(--hair); display: flex; flex-direction: column; justify-content: space-between; }
+.stub[data-theme="paper"] { background: var(--paper); color: var(--ink); }
+.stub[data-theme="cobalt"] { background: var(--cobalt); color: var(--paper); }
+.stub[data-theme="ink"] .label { color: var(--lime); }
+.h { font: 400 clamp(64px, 16vw, 260px)/.85 var(--display); text-transform: uppercase; }
+@media (max-width: 800px) { .stub { padding-inline: 16px; } }

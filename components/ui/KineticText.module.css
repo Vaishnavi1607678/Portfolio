@@ -1,0 +1,4 @@
+.k { display: inline-block; }
+.p { display: inline-block; white-space: pre; transition: transform .8s cubic-bezier(.2,.8,.2,1) calc(var(--dl) + var(--i) * var(--st)), opacity .5s linear calc(var(--dl) + var(--i) * var(--st)); }
+.k[data-state="armed"] .p { transition: none; transform: translateY(70%) rotate(5deg); opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .p { transition: none; } }
