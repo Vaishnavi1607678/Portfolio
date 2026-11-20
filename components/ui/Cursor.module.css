@@ -1,0 +1,10 @@
+.dot, .ring { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 95; display: none; }
+:global(html[data-cursor]) .dot, :global(html[data-cursor]) .ring { display: block; }
+.dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--lime); }
+.ring { width: 36px; height: 36px; margin: -18px 0 0 -18px; }
+.ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #fff; mix-blend-mode: difference; transform: scale(.5); transition: transform .25s cubic-bezier(.2,.8,.2,1), opacity .2s; }
+.ring[data-hot="1"]::before { transform: scale(1.4); }
+.ring[data-label="1"]::before { transform: scale(2.2); }
+.ring[data-hide="1"]::before, .dot[data-hide="1"] { opacity: 0; }
+.label { position: absolute; inset: 0; display: grid; place-items: center; font: 700 9px/1 var(--mono); letter-spacing: .14em; color: var(--ink); mix-blend-mode: normal; }
+:global(html[data-cursor="on"]) *:not(input):not(textarea):not(select) { cursor: none !important; }

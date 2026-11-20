@@ -1,0 +1,56 @@
+/* All hero geometry is authored in px at 1440 (desktop) / 390 (mobile) and scaled by --u. */
+.hero { --u: calc(min(100vw, 1920px) / 1440); --px: 0; --py: 0; position: relative; height: max(calc(900 * var(--u)), 100svh); min-height: 560px; overflow: clip; background: var(--ink); }
+.stage { position: absolute; left: 50%; top: 0; width: min(100vw, 1920px); height: calc(900 * var(--u)); transform: translateX(-50%); }
+.tag { position: absolute; left: calc(40 * var(--u)); top: calc(70 * var(--u)); z-index: 5; color: var(--muted-2); font-size: max(10px, calc(10 * var(--u))); letter-spacing: .16em; }
+.netBox { position: absolute; right: calc(20 * var(--u)); top: calc(90 * var(--u)); width: calc(640 * var(--u)); height: calc(700 * var(--u)); z-index: 1; }
+.netLayer { position: absolute; inset: 0; transform: translate3d(calc(var(--px) * -14px), calc(var(--py) * -14px), 0); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.typeLayer { display: contents; }
+.h1 { font: inherit; position: static; }
+.h1 .typeLayer .t { transform: translate3d(calc(var(--px) * 6px), calc(var(--py) * 6px), 0); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.t { position: absolute; white-space: nowrap; z-index: 3; line-height: .82; pointer-events: none; text-transform: none; }
+.a { font-family: var(--display); font-size: calc(178 * var(--u)); left: calc(40 * var(--u)); top: calc(92 * var(--u)); letter-spacing: -.005em; }
+.b { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: calc(290 * var(--u)); left: calc(420 * var(--u)); top: calc(150 * var(--u)); color: var(--lime); line-height: .8; letter-spacing: -.03em; z-index: 4; }
+.c { font-family: var(--display); font-size: calc(268 * var(--u)); left: calc(28 * var(--u)); top: calc(352 * var(--u)); color: transparent; -webkit-text-stroke: 2.5px var(--paper); letter-spacing: -.01em; }
+.c span, .c span span { color: transparent; }
+.d { font-family: var(--display); font-size: calc(176 * var(--u)); left: calc(470 * var(--u)); top: calc(600 * var(--u)); }
+.block { background: var(--cobalt); padding: 0 calc(18 * var(--u)) 0 calc(14 * var(--u)); margin-left: calc(-4 * var(--u)); display: inline-block; transform: rotate(-1.4deg); color: var(--paper); }
+
+.sticker { position: absolute; right: calc(120 * var(--u)); top: calc(84 * var(--u)); width: calc(176 * var(--u)); height: calc(176 * var(--u)); border-radius: 50%; background: var(--lime); color: var(--ink); display: grid; place-content: center; text-align: center; transform: rotate(12deg); z-index: 6; }
+.sticker b { font: 400 calc(64 * var(--u))/.95 var(--display); }
+.sticker > span { font-size: max(8px, calc(10 * var(--u))); letter-spacing: .2em; font-weight: 700; }
+.tape { position: absolute; z-index: 7; font-weight: 700; font-size: max(10px, calc(13 * var(--u))); letter-spacing: .12em; text-transform: uppercase; padding: calc(9 * var(--u)) calc(18 * var(--u)); white-space: nowrap; pointer-events: none; }
+.t1 { background: var(--cobalt); color: var(--paper); right: calc(-20 * var(--u)); top: calc(330 * var(--u)); transform: rotate(-5deg); padding: calc(14 * var(--u)) calc(40 * var(--u)) calc(14 * var(--u)) calc(24 * var(--u)); display: flex; align-items: baseline; gap: calc(14 * var(--u)); }
+.t1 b { font: 400 calc(78 * var(--u))/.9 var(--display); letter-spacing: 0; }
+.t2 { border: 1.5px solid var(--lime); color: var(--lime); background: var(--ink); right: calc(230 * var(--u)); top: calc(520 * var(--u)); transform: rotate(3deg); }
+.t3 { background: var(--paper); color: var(--ink); right: calc(40 * var(--u)); top: calc(566 * var(--u)); transform: rotate(-2deg); }
+.snapCap { position: absolute; z-index: 5; right: calc(40 * var(--u)); top: calc(622 * var(--u)); max-width: calc(260 * var(--u)); text-align: right; color: var(--muted); font-size: max(10px, calc(10 * var(--u))); line-height: 1.5; pointer-events: none; }
+.name { position: absolute; left: calc(40 * var(--u)); top: calc(760 * var(--u)); z-index: 5; }
+.nameH { font: 400 calc(46 * var(--u))/1 var(--serif); }
+.role { margin-top: 10px; color: var(--muted); font-size: max(10px, calc(11 * var(--u))); }
+.scroll { position: absolute; right: calc(40 * var(--u)); bottom: calc(30 * var(--u)); z-index: 5; text-align: right; color: var(--muted); text-decoration: none; padding: 6px; }
+.scroll b { display: block; color: var(--paper); font: 400 max(20px, calc(30 * var(--u)))/1.2 var(--display); letter-spacing: .02em; }
+.scroll:hover b { color: var(--lime); }
+
+@media (max-width: 800px) {
+  .hero { --u: calc(100vw / 390); height: max(calc(1000 * var(--u)), 100svh); }
+  .stage { width: 100vw; height: calc(1000 * var(--u)); }
+  .tag, .scroll { display: none; }
+  .a { font-size: 25vw; left: calc(14 * var(--u)); top: calc(80 * var(--u)); }
+  .b { font-size: 44vw; left: 22vw; top: calc(140 * var(--u)); }
+  .c { font-size: 22.5vw; left: calc(8 * var(--u)); top: calc(330 * var(--u)); -webkit-text-stroke-width: 1.5px; }
+  .d { font-size: 22vw; left: 6vw; top: calc(480 * var(--u)); }
+  .netBox { right: calc(-120 * var(--u)); top: calc(420 * var(--u)); width: calc(520 * var(--u)); height: calc(520 * var(--u)); opacity: .9; }
+  .sticker { width: calc(116 * var(--u)); height: calc(116 * var(--u)); right: calc(14 * var(--u)); top: calc(608 * var(--u)); }
+  .sticker b { font-size: calc(40 * var(--u)); }
+  .sticker > span { font-size: 8px; }
+  .tape { font-size: 10px; padding: 8px 14px; }
+  .t1 { right: 0; top: calc(790 * var(--u)); padding: 8px 30px 8px 16px; font-size: 9px; gap: 10px; }
+  .t1 b { font-size: calc(44 * var(--u)); }
+  .t2 { right: auto; left: calc(14 * var(--u)); top: calc(710 * var(--u)); }
+  .t3 { display: none; }
+  .snapCap { right: auto; left: calc(16 * var(--u)); top: calc(968 * var(--u)); max-width: 80vw; text-align: left; }
+  .name { left: calc(16 * var(--u)); top: calc(880 * var(--u)); }
+  .nameH { font-size: calc(34 * var(--u)); }
+}
+@media (min-width: 801px) and (max-width: 1100px) { .role { letter-spacing: .1em; } }
+@media (prefers-reduced-motion: reduce) { .netLayer, .h1 .typeLayer .t { transition: none; transform: none; } }
